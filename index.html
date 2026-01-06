@@ -27,7 +27,7 @@
              return;
           }
           
-          if (src.includes('imgur.com') && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
+          if (src.includes('imgur.com') && !src.includes('HqWKXZq') && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
             const newSrc = src.replace(/(\.jpg|\.jpeg|\.png)$/, 'l$1');
             img.setAttribute('src', newSrc);
           }
