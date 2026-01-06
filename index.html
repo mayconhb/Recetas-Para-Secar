@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Satisfy&display=swap" rel="stylesheet">
     
     <!-- Preload Hero Image -->
-    
+    <link rel="preload" as="image" href="https://i.imgur.com/HqWKXZq.jpeg" fetchpriority="high">
+
     <script>
       // Automatically use Imgur's "l" (large thumbnail) for better performance
       document.addEventListener("DOMContentLoaded", function() {
@@ -19,6 +20,14 @@
         images.forEach(img => {
           let src = img.getAttribute('src');
           if (!src) return;
+          
+          // Force new link and prevent caching issues
+          if (src.includes('HqWKXZq') || src.includes('TGXcrgv') || src.includes('p0kdzwA') || src.includes('dTKy0ue')) {
+             if (src.includes('HqWKXZq') || src.includes('TGXcrgv')) {
+                img.src = 'https://i.imgur.com/HqWKXZq.jpeg';
+                return;
+             }
+          }
           
           if (src.includes('imgur.com') && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
             const newSrc = src.replace(/(\.jpg|\.jpeg|\.png)$/, 'l$1');
@@ -550,7 +559,7 @@
             <div class="relative w-full max-w-3xl" style="margin: 0 auto;">
                 <div class="hero-blob"></div>
                 <img 
-                    src="https://i.imgur.com/p0kdzwA.jpeg" 
+                    src="https://i.imgur.com/HqWKXZq.jpeg" 
                     alt="Mujer cocinando saludable" 
                     class="hero-img"
                     width="800"
@@ -609,6 +618,10 @@
         <h2 class="story-headline">
             Fue exactamente eso <br/> lo que yo hice...
         </h2>
+
+        <div class="max-w-4xl flex justify-center" style="margin: 0 auto 3rem auto;">
+            <img src="https://i.imgur.com/HqWKXZq.jpeg" alt="Historia" style="border-radius: 1rem; box-shadow: var(--shadow-lg); width: 100%; max-width: 28rem; height: 500px; object-fit: cover;" loading="lazy" decoding="async">
+        </div>
 
         <div class="quote-box">
             <span class="absolute" style="top: 1rem; left: 1rem; font-size: 3.75rem; color: #fbcfe8; opacity: 0.5; line-height: 1;">"</span>
