@@ -18,7 +18,13 @@
       document.addEventListener("DOMContentLoaded", function() {
         const images = document.querySelectorAll('img[src^="https://i.imgur.com/"]');
         images.forEach(img => {
-          const src = img.getAttribute('src');
+          let src = img.getAttribute('src');
+          // If the image is the specific one that's failing, try without the 'l' thumbnail first
+          // or ensure we're using the direct link format correctly.
+          if (src.includes('TGXcrgv')) {
+             // For this specific image, let's use the direct link without thumbnailing if it fails
+             return; 
+          }
           // Only apply to JPG/PNG and if not already thumbnailed
           if ((src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
             const newSrc = src.replace(/(\.jpg|\.jpeg|\.png)$/, 'l$1');
