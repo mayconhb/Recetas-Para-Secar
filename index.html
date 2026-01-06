@@ -8,26 +8,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Satisfy&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- Preload Hero Image -->
-    <link rel="preload" as="image" href="https://i.imgur.com/HqWKXZq.jpeg" fetchpriority="high">
-
-    <script>
-      // Automatically use Imgur's "l" (large thumbnail) for better performance
-      document.addEventListener("DOMContentLoaded", function() {
-        const images = document.querySelectorAll('img');
-        images.forEach(img => {
-          let src = img.getAttribute('src');
-          if (!src) return;
-          
-          if (src.includes('imgur.com') && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
-            const newSrc = src.replace(/(\.jpg|\.jpeg|\.png)$/, 'l$1');
-            img.setAttribute('src', newSrc);
-          }
-        });
-      });
-    </script>
+    <link rel="preload" as="image" href="https://i.imgur.com/HqWKXZql.jpeg" fetchpriority="high">
 
     <style>
       /* --- 1. VARIABLES & RESET --- */
@@ -551,7 +535,7 @@
             <div class="relative w-full max-w-3xl" style="margin: 0 auto;">
                 <div class="hero-blob"></div>
                 <img 
-                    src="https://i.imgur.com/HqWKXZq.jpeg" 
+                    src="https://i.imgur.com/HqWKXZql.jpeg" 
                     alt="Mujer cocinando saludable" 
                     class="hero-img"
                     width="800"
@@ -612,7 +596,7 @@
         </h2>
 
         <div class="max-w-4xl flex justify-center" style="margin: 0 auto 3rem auto;">
-            <img src="https://i.imgur.com/HqWKXZq.jpeg" alt="Historia" style="border-radius: 1rem; box-shadow: var(--shadow-lg); width: 100%; max-width: 28rem; height: 500px; object-fit: cover;" loading="lazy" decoding="async">
+            <img src="https://i.imgur.com/HqWKXZql.jpeg" alt="Historia" style="border-radius: 1rem; box-shadow: var(--shadow-lg); width: 100%; max-width: 28rem; height: 500px; object-fit: cover;" loading="lazy" decoding="async">
         </div>
 
         <div class="quote-box">
@@ -634,7 +618,7 @@
         </div>
 
         <div class="grid grid-cols-2 md-grid-cols-4 gap-4" style="max-width: 64rem; margin: 0 auto 3rem auto;">
-            <img src="https://i.imgur.com/HqWKXZq.jpeg" class="module-grid-img" alt="Plato delicioso" loading="lazy" decoding="async">
+            <img src="https://i.imgur.com/HqWKXZql.jpeg" class="module-grid-img" alt="Plato delicioso" loading="lazy" decoding="async">
             <img src="https://i.imgur.com/NKFdhly.jpg" class="module-grid-img" alt="Plato delicioso" loading="lazy" decoding="async">
             <img src="https://i.imgur.com/YHV5eIo.jpg" class="module-grid-img" alt="Plato delicioso" loading="lazy" decoding="async">
             <img src="https://i.imgur.com/jj6gYPM.jpg" class="module-grid-img" alt="Plato delicioso" loading="lazy" decoding="async">
@@ -653,7 +637,7 @@
         <p class="text-gray max-w-2xl" style="margin: 0 auto 2.5rem auto;">
             Son más de 200 recetas saludables para que nunca más pienses que hacer dieta es aburrido. Descubre el placer de comer bien sin culpa.
         </p>
-        <img src="https://i.imgur.com/HqWKXZq.jpeg" alt="Variedad de platos" class="promise-img" style="width: 20rem; height: 20rem;" loading="lazy" decoding="async">
+        <img src="https://i.imgur.com/HqWKXZql.jpeg" alt="Variedad de platos" class="promise-img" style="width: 20rem; height: 20rem;" loading="lazy" decoding="async">
     </section>
 
     <!-- 6. HOW IT WORKS -->
