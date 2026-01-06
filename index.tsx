@@ -1,1 +1,0 @@
-// Este arquivo não é mais utilizado. O projeto roda via index.html.
