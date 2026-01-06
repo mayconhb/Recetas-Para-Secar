@@ -16,18 +16,16 @@
     <script>
       // Automatically use Imgur's "l" (large thumbnail) for better performance
       document.addEventListener("DOMContentLoaded", function() {
-        const images = document.querySelectorAll('img[src^="https://i.imgur.com/"], img[src^="https://imgur.com/"]');
+        const images = document.querySelectorAll('img[src*="imgur.com"]');
         images.forEach(img => {
           let src = img.getAttribute('src');
           
-          // Debugging and fixing the specific image that's failing
           if (src.includes('HqWKXZq')) {
              console.log('Fixing image HqWKXZq');
-             // No modification for this specific image
+             img.src = 'https://i.imgur.com/HqWKXZq.jpeg';
              return; 
           }
           
-          // Only apply to JPG/PNG and if not already thumbnailed
           if ((src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
             const newSrc = src.replace(/(\.jpg|\.jpeg|\.png)$/, 'l$1');
             img.setAttribute('src', newSrc);
