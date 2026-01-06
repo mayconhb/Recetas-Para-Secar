@@ -21,13 +21,7 @@
           let src = img.getAttribute('src');
           if (!src) return;
           
-          // Force new link and prevent caching issues for specific failing images
-          if (src.includes('HqWKXZq') || src.includes('TGXcrgv') || src.includes('p0kdzwA') || src.includes('dTKy0ue')) {
-             img.src = 'https://i.imgur.com/HqWKXZq.jpeg';
-             return;
-          }
-          
-          if (src.includes('imgur.com') && !src.includes('HqWKXZq') && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
+          if (src.includes('imgur.com') && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) && !src.match(/[hslmt]\.(jpg|jpeg|png)$/)) {
             const newSrc = src.replace(/(\.jpg|\.jpeg|\.png)$/, 'l$1');
             img.setAttribute('src', newSrc);
           }
