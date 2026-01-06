@@ -16,15 +16,15 @@
     <script>
       // Automatically use Imgur's "l" (large thumbnail) for better performance
       document.addEventListener("DOMContentLoaded", function() {
-        const images = document.querySelectorAll('img[src^="https://i.imgur.com/"]');
+        const images = document.querySelectorAll('img[src^="https://i.imgur.com/"], img[src^="https://imgur.com/"]');
         images.forEach(img => {
           let src = img.getAttribute('src');
           
           // Debugging and fixing the specific image that's failing
           if (src.includes('TGXcrgv')) {
              console.log('Fixing image TGXcrgv');
-             // Try a slightly different format that sometimes helps with Imgur's hotlinking protection
-             img.src = 'https://i.imgur.com/TGXcrgv.png';
+             // Using the direct image link format which is the most reliable
+             img.src = 'https://i.imgur.com/TGXcrgv.jpg';
              return; 
           }
           
@@ -620,7 +620,7 @@
         </h2>
 
         <div class="max-w-4xl flex justify-center" style="margin: 0 auto 3rem auto;">
-            <img src="https://i.imgur.com/TGXcrgv.png" alt="Historia" style="border-radius: 1rem; box-shadow: var(--shadow-lg); width: 100%; max-width: 28rem; height: 500px; object-fit: cover;" loading="lazy" decoding="async">
+            <img src="https://i.imgur.com/TGXcrgv.jpg" alt="Historia" style="border-radius: 1rem; box-shadow: var(--shadow-lg); width: 100%; max-width: 28rem; height: 500px; object-fit: cover;" loading="lazy" decoding="async">
         </div>
 
         <div class="quote-box">
